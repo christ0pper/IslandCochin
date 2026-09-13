@@ -1,0 +1,74 @@
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+/* every in-page anchor clears the fixed utility bar + header */
+section[id],footer[id]{scroll-margin-top:calc(38px + var(--header-h))}
+
+body{
+  margin:0;
+  touch-action:manipulation;
+  -webkit-tap-highlight-color:rgba(26,118,171,.2);
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-weight:300;
+  font-size:16px;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a,a:visited{color:inherit;text-decoration:none}
+h1,h2,h3,h4{margin:0;font-family:var(--serif);font-weight:300;letter-spacing:-.01em;line-height:1.12;text-wrap:balance}
+p{margin:0}
+ol,ul{margin:0;padding:0;list-style:none}
+dl,dd,dt{margin:0}
+
+/* max() so a landscape notch can only ever add to the gutter, never shrink it */
+.wrap{
+  width:100%;max-width:var(--wrap);margin-inline:auto;
+  padding-inline:max(var(--gut),env(safe-area-inset-left))
+                 max(var(--gut),env(safe-area-inset-right));
+}
+
+.skip{position:absolute;left:-9999px;top:0;background:var(--forest);color:#fff;padding:12px 20px;z-index:200}
+.skip:focus{left:0}
+
+:focus-visible{outline:2px solid var(--brand);outline-offset:3px}
+
+/* ---------------------------------------------------------------
+   TYPE PRIMITIVES
+   --------------------------------------------------------------- */
+.eyebrow{
+  font-size:11px;letter-spacing:.24em;text-transform:uppercase;
+  font-weight:400;color:var(--brand-ink);margin-bottom:22px;
+}
+.eyebrow--light{color:#fff}
+
+.h2{font-size:clamp(2rem,4.2vw,3.6rem)}
+.h2--light{color:#fff}
+
+.copy{font-size:clamp(1rem,1.1vw,1.075rem);color:var(--muted);max-width:52ch}
+.copy--light{color:rgba(255,255,255,.82)}
+.copy--head{max-width:40ch;align-self:end;padding-bottom:.4rem}
+
+.link{
+  display:inline-block;margin-top:22px;font-size:12px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--brand-ink);
+  border-bottom:1px solid currentColor;padding-bottom:4px;
+  transition:color .3s var(--ease),border-color .3s var(--ease);
+}
+.link:hover{color:var(--forest)}
+
+/* ---------------------------------------------------------------
+   REVEAL
+   --------------------------------------------------------------- */
+/* Content is visible at rest. The fade-up is layered on only once JS has
+   confirmed it can run it (main.jsx stamps .js-reveal on <html>), so a deep
+   link, a blocked script, a print job or a misfiring observer can never leave
+   a section blank. */
+.reveal{transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.js-reveal .reveal:not(.in){opacity:0;transform:translateY(26px)}
+
+@media print{
+  .js-reveal .reveal:not(.in){opacity:1;transform:none}
+}

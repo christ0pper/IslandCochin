@@ -1,0 +1,97 @@
+/* ---------------------------------------------------------------
+   UTILITY BAR + HEADER
+   --------------------------------------------------------------- */
+.utility{
+  position:fixed;inset:0 0 auto;z-index:60;
+  background:var(--forest);color:rgba(255,255,255,.72);
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  transition:transform .4s var(--ease);
+}
+.utility__in{display:flex;align-items:center;justify-content:flex-end;height:38px;gap:20px}
+.utility,.header{padding-inline:env(safe-area-inset-left) env(safe-area-inset-right)}
+.utility__links{display:flex;align-items:center;gap:14px}
+.utility__links a{transition:color .3s var(--ease)}
+.utility__links a:hover{color:#fff}
+.dot{width:3px;height:3px;border-radius:50%;background:currentColor;opacity:.5}
+body.scrolled .utility{transform:translateY(-100%)}
+
+.header{
+  position:fixed;top:38px;left:0;right:0;z-index:70;
+  color:#fff;
+  transition:transform .4s var(--ease),background .4s var(--ease),
+             color .4s var(--ease),box-shadow .4s var(--ease);
+}
+.header__in{display:flex;align-items:center;justify-content:space-between;gap:28px;height:var(--header-h)}
+body.scrolled .header{
+  transform:translateY(-38px);
+  background:var(--paper);
+  color:var(--ink);
+  box-shadow:0 1px 0 var(--line);
+}
+
+.brand{display:flex;align-items:center;gap:12px}
+/* intrinsic 228x320 — height drives it, width follows, so the ratio is fixed
+   and the mark cannot shift layout while it loads */
+.brand__mark{display:block;flex:none}
+.brand__mark img{display:block;width:auto;height:54px}
+.brand--footer .brand__mark img{height:58px}
+.brand__type{display:flex;flex-direction:column;line-height:1}
+.brand__name{font-family:var(--serif);font-size:22px;letter-spacing:.02em}
+.brand__sub{font-size:9px;letter-spacing:.42em;text-transform:uppercase;opacity:.72;margin-top:4px}
+
+.nav{display:flex;align-items:center;gap:clamp(16px,2vw,32px)}
+.nav a:not(.btn){
+  position:relative;font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  padding:6px 0;white-space:nowrap;
+}
+.nav a:not(.btn)::after{
+  content:"";position:absolute;left:0;bottom:0;height:1px;width:0;
+  background:currentColor;transition:width .35s var(--ease);
+}
+.nav a:not(.btn):hover::after,.nav a:not(.btn).is-active::after{width:100%}
+.nav__book{display:none}
+
+.header__cta{display:flex;align-items:center;gap:14px}
+/* the translucent treatment is for the button sitting over the hero only —
+   the drawer copy sits on paper, where it needs to stay a solid blue button */
+body:not(.scrolled) .header .btn--solid:not(.nav__book){background:rgba(255,255,255,.18);border-color:var(--line-light);backdrop-filter:blur(6px)}
+body:not(.scrolled) .header .btn--solid:not(.nav__book):hover{background:#fff;color:var(--forest)}
+
+.burger{
+  display:none;position:relative;width:44px;height:44px;background:none;border:0;
+  cursor:pointer;padding:0;color:inherit;
+}
+/* Both bars share one origin at the centre and are offset by transform alone,
+   so the open state rotates them about the same point into an X. Laying them
+   out as separate grid rows and nudging them together lands each bar in a
+   differently-sized track, which reads as a chevron rather than a cross. */
+.burger span{
+  position:absolute;left:50%;top:50%;width:22px;height:1px;margin-left:-11px;
+  background:currentColor;transition:transform .3s var(--ease),opacity .3s var(--ease);
+}
+.burger span:first-child{transform:translateY(-3px)}
+.burger span:last-child{transform:translateY(3px)}
+.burger[aria-expanded="true"] span:first-child{transform:rotate(45deg)}
+.burger[aria-expanded="true"] span:last-child{transform:rotate(-45deg)}
+
+/* ---------------------------------------------------------------
+   FOOTER
+   --------------------------------------------------------------- */
+.footer{background:var(--forest);color:rgba(255,255,255,.68);padding-top:clamp(70px,9vw,120px)}
+.footer__in{display:grid;grid-template-columns:1.5fr 1.2fr 1fr 1fr;gap:clamp(30px,4vw,60px);padding-bottom:70px}
+.footer .brand{color:#fff;margin-bottom:22px}
+.footer__blurb{max-width:34ch;font-size:.92rem}
+.footer__col h4{
+  font-family:var(--sans);font-size:10px;letter-spacing:.22em;
+  text-transform:uppercase;color:rgba(255,255,255,.62);margin-bottom:20px;
+}
+.footer__col p{font-size:.92rem;margin-bottom:14px}
+.footer__col a{transition:color .3s var(--ease)}
+.footer__col a:hover{color:#fff}
+.footer__social{display:flex;gap:18px}
+.footer__nav{display:flex;flex-direction:column;gap:12px;font-size:.92rem}
+.footer__base{
+  display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
+  border-top:1px solid rgba(255,255,255,.12);padding-block:26px;
+  font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.62);
+}

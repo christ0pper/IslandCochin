@@ -1,0 +1,53 @@
+/* =====================================================================
+   Island D Cochin — visual system
+   Layout language mirrors hotelodisej.com (full-bleed imagery, serif
+   display + letterspaced sans labels, numbered stay list, generous
+   whitespace) in Island D Cochin's own white-and-blue palette.
+
+   PHOTOGRAPHY / VIDEO
+   Every image slot is an .art element with a painted placeholder.
+   Drop in a real photo with one inline style, no CSS edits:
+     <div class="art art--aerial" style="--photo:url('assets/img/hero.jpg')"></div>
+   The hero also accepts a background video - see .hero__video below.
+   ===================================================================== */
+
+:root{
+  /* the site commits to one light, white-and-blue world; declaring it keeps
+     native controls and scrollbars from being forced dark by the OS */
+  color-scheme:light;
+
+  /* brand — Island D Cochin is white and blue.
+     The variable names are kept from the first pass so the whole
+     sheet re-skins from this block alone. */
+  --forest:#0b2540;   /* deepest navy  — footer, utility bar, booking bar */
+  --olive:#134a72;    /* mid navy      — large display text */
+  --brand:#1a76ab;    /* primary blue  — fills: buttons, the CTA band */
+  /* Same blue, darkened just enough to clear 4.5:1 on --sand. Small text and
+     links on light grounds use this; --brand stays put so fills are unchanged. */
+  --brand-ink:#15628f;
+  --brand-soft:#5aa7cd;
+
+  /* backwater accents */
+  --water:#3f7f9e;
+  --water-deep:#0f2f47;
+  --sun:#e8f1f6;      /* highlights read as white light on water */
+
+  /* neutrals */
+  --sand:#eef4f8;     /* pale blue-white section ground */
+  --paper:#ffffff;
+  --ink:#0f2233;
+  --muted:#5a7284;    /* 5.0:1 on --paper, 4.5:1 on --sand */
+  --line:rgba(11,37,64,.14);        /* hairline dividers — decorative */
+  /* Borders that define an interactive control have to clear 3:1, which the
+     divider hairline does not. Buttons use these instead. */
+  --line-strong:rgba(11,37,64,.55);
+  --line-light:rgba(255,255,255,.5);
+
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --sans:"Jost","Helvetica Neue",Arial,sans-serif;
+
+  --wrap:1280px;
+  --gut:clamp(20px,5vw,64px);
+  --header-h:84px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}

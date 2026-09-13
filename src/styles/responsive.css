@@ -1,0 +1,66 @@
+/* ---------------------------------------------------------------
+   RESPONSIVE
+   --------------------------------------------------------------- */
+@media (max-width:1180px){
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .footer__in{grid-template-columns:1fr 1fr}
+}
+
+@media (max-width:1024px){
+  .nav{
+    position:fixed;inset:calc(38px + var(--header-h)) 0 auto;
+    flex-direction:column;align-items:flex-start;gap:0;
+    background:var(--paper);color:var(--ink);
+    padding:10px var(--gut) 30px;
+    border-bottom:1px solid var(--line);
+    overscroll-behavior:contain;
+    /* visibility, not opacity alone: without it every link stays in the tab
+       order while the drawer is invisible, so focus vanishes into a closed
+       panel. The 0s delay holds it visible for the length of the fade-out. */
+    transform:translateY(-12px);opacity:0;visibility:hidden;pointer-events:none;
+    transition:opacity .3s var(--ease),transform .3s var(--ease),
+               visibility 0s linear .3s;
+  }
+  .nav.open{
+    opacity:1;transform:none;visibility:visible;pointer-events:auto;
+    transition:opacity .3s var(--ease),transform .3s var(--ease),visibility 0s;
+  }
+  /* the header's Book button is hidden at this width, so the drawer carries it */
+  .nav__book{display:flex;width:100%;margin-top:24px}
+  .nav a:not(.btn){width:100%;padding:16px 0;border-bottom:1px solid var(--line);font-size:12px}
+  .nav a:not(.btn)::after{display:none}
+  .burger{display:block}
+  .header__cta .btn--solid{display:none}
+  body.scrolled .nav{top:var(--header-h)}
+
+  .split{grid-template-columns:1fr}
+  .split__media{min-height:52vh}
+  .split__body{padding-inline:var(--gut)}
+  .section__head{grid-template-columns:1fr;align-items:start}
+  .copy--head{padding-bottom:0}
+  .bookbar__form{grid-template-columns:1fr 1fr;gap:18px}
+  .bookbar__go{grid-column:1/-1}
+  .notecard{grid-template-columns:1fr;align-items:start}
+}
+
+@media (max-width:680px){
+  .cards,.cards--two{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr}
+  .footer__in{grid-template-columns:1fr}
+  .hero__in{padding-top:150px}
+  .stack__item a{padding-right:52px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  /* iteration-count matters: clamping duration alone leaves an `infinite`
+     loop cycling every 0.01ms rather than stopping it. */
+  *{
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.01ms!important;
+    transition-delay:0s!important;
+  }
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none}
+}
