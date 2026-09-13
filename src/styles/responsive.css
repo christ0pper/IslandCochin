@@ -9,7 +9,7 @@
 
 @media (max-width:1024px){
   .nav{
-    position:fixed;inset:calc(38px + var(--header-h)) 0 auto;
+    position:fixed;inset:var(--header-h) 0 auto;
     flex-direction:column;align-items:flex-start;gap:0;
     background:var(--paper);color:var(--ink);
     padding:10px var(--gut) 30px;
@@ -32,7 +32,6 @@
   .nav a:not(.btn)::after{display:none}
   .burger{display:block}
   .header__cta .btn--solid{display:none}
-  body.scrolled .nav{top:var(--header-h)}
 
   .split{grid-template-columns:1fr}
   .split__media{min-height:52vh}
@@ -45,10 +44,10 @@
 }
 
 @media (max-width:680px){
-  .cards,.cards--two{grid-template-columns:1fr}
+  .cards{grid-template-columns:1fr}
   .stats{grid-template-columns:1fr}
   .footer__in{grid-template-columns:1fr}
-  .hero__in{padding-top:150px}
+  .hero__in{padding-top:112px}
   .stack__item a{padding-right:52px}
 }
 

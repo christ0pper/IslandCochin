@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 /**
  * Mirrors the static site: adds `scrolled` to <body> past a threshold, which
- * retracts the utility bar and turns the header solid. Body-level rather than
+ * turns the header solid. Body-level rather than
  * component state because both the header and the nav dropdown depend on it.
  */
 export function useScrolled(threshold = 40) {

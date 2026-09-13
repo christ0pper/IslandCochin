@@ -19,7 +19,7 @@
   /* brand — Island D Cochin is white and blue.
      The variable names are kept from the first pass so the whole
      sheet re-skins from this block alone. */
-  --forest:#0b2540;   /* deepest navy  — footer, utility bar, booking bar */
+  --forest:#0b2540;   /* deepest navy  — footer, booking bar */
   --olive:#134a72;    /* mid navy      — large display text */
   --brand:#1a76ab;    /* primary blue  — fills: buttons, the CTA band */
   /* Same blue, darkened just enough to clear 4.5:1 on --sand. Small text and

@@ -1,7 +1,7 @@
 import Reveal from './Reveal';
 import Headline from './Headline';
 
-/** The two-column section header used by Dining, Events and Discover. */
+/** The two-column section header used by Dining and Events. */
 export default function SectionHead({ eyebrow, titleLines, copy }) {
   return (
     <div className="section__head">

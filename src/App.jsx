@@ -1,7 +1,6 @@
 import { useScrolled } from './hooks/useScrolled';
 import { useHashScroll } from './hooks/useHashScroll';
 
-import UtilityBar from './components/layout/UtilityBar';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 
@@ -12,7 +11,6 @@ import Stay from './components/sections/Stay';
 import Dining from './components/sections/Dining';
 import Experiences from './components/sections/Experiences';
 import Events from './components/sections/Events';
-import Discover from './components/sections/Discover';
 import CallToAction from './components/sections/CallToAction';
 
 export default function App() {
@@ -23,7 +21,6 @@ export default function App() {
     <>
       <a className="skip" href="#main">Skip to content</a>
 
-      <UtilityBar />
       <Header />
 
       <main id="main">
@@ -34,7 +31,6 @@ export default function App() {
         <Dining />
         <Experiences />
         <Events />
-        <Discover />
         <CallToAction />
       </main>
 

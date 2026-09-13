@@ -1,29 +1,15 @@
 /* ---------------------------------------------------------------
-   UTILITY BAR + HEADER
+   HEADER
    --------------------------------------------------------------- */
-.utility{
-  position:fixed;inset:0 0 auto;z-index:60;
-  background:var(--forest);color:rgba(255,255,255,.72);
-  font-size:11px;letter-spacing:.14em;text-transform:uppercase;
-  transition:transform .4s var(--ease);
-}
-.utility__in{display:flex;align-items:center;justify-content:flex-end;height:38px;gap:20px}
-.utility,.header{padding-inline:env(safe-area-inset-left) env(safe-area-inset-right)}
-.utility__links{display:flex;align-items:center;gap:14px}
-.utility__links a{transition:color .3s var(--ease)}
-.utility__links a:hover{color:#fff}
-.dot{width:3px;height:3px;border-radius:50%;background:currentColor;opacity:.5}
-body.scrolled .utility{transform:translateY(-100%)}
-
 .header{
-  position:fixed;top:38px;left:0;right:0;z-index:70;
+  position:fixed;top:0;left:0;right:0;z-index:70;
+  padding-inline:env(safe-area-inset-left) env(safe-area-inset-right);
   color:#fff;
   transition:transform .4s var(--ease),background .4s var(--ease),
              color .4s var(--ease),box-shadow .4s var(--ease);
 }
 .header__in{display:flex;align-items:center;justify-content:space-between;gap:28px;height:var(--header-h)}
 body.scrolled .header{
-  transform:translateY(-38px);
   background:var(--paper);
   color:var(--ink);
   box-shadow:0 1px 0 var(--line);

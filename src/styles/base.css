@@ -1,7 +1,7 @@
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-/* every in-page anchor clears the fixed utility bar + header */
-section[id],footer[id]{scroll-margin-top:calc(38px + var(--header-h))}
+/* every in-page anchor clears the fixed header */
+section[id],footer[id]{scroll-margin-top:var(--header-h)}
 
 body{
   margin:0;

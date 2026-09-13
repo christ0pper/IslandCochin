@@ -1,7 +1,7 @@
 import Reveal from './Reveal';
 import Art from './Art';
 
-/** Image-over-text card used by the Dining and Discover grids. */
+/** Image-over-text card used by the Dining grid. */
 export default function Card({ art, artAlt, photo, title, copy, linkLabel, href, delay = 0 }) {
   return (
     <Reveal as="article" className="card" delay={delay}>

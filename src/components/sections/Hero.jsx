@@ -1,22 +1,12 @@
-import { useEffect, useState } from 'react';
 import { hero } from '../../data/site';
+import { useAllowMotion } from '../../hooks/useAllowMotion';
 import Reveal from '../ui/Reveal';
 import Headline from '../ui/Headline';
 import Art from '../ui/Art';
 import Button from '../ui/Button';
 
 export default function Hero() {
-  // decorative loop: never autoplay it for someone who asked for less motion
-  const [allowMotion, setAllowMotion] = useState(false);
-
-  useEffect(() => {
-    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const sync = () => setAllowMotion(!mq.matches);
-    sync();
-    mq.addEventListener('change', sync);
-    return () => mq.removeEventListener('change', sync);
-  }, []);
-
+  const allowMotion = useAllowMotion();
   const showVideo = Boolean(hero.video) && allowMotion;
 
   return (

@@ -21,7 +21,6 @@ export const nav = [
   { label: 'Dining', href: '#dining' },
   { label: 'Experiences', href: '#experiences' },
   { label: 'Events & Weddings', href: '#events' },
-  { label: 'Discover Kochi', href: '#discover' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -93,6 +92,7 @@ export const stay = {
     {
       id: 'dayout',
       art: 'dayout',
+      photo: '/img/dayoutpackage.jpg',
       caption: 'Day Out',
       title: 'Day Out Package',
       copy: 'Ferry across after breakfast, spend the day on the water and the lawn, and be back on the mainland by dusk.',
@@ -119,7 +119,8 @@ export const dining = {
     {
       id: 'deck',
       art: 'float',
-      artAlt: 'Floating dining deck on the backwater',
+      photo: '/img/seating.jpg',
+      artAlt: 'The floating hall set with rows of covered chairs facing the stage',
       title: 'The Floating Deck',
       copy: 'A dining platform on the backwater itself, seating up to 450 for a feast that moves gently with the water. Best booked for sunset.',
       linkLabel: 'Reserve the deck',
@@ -144,7 +145,10 @@ export const experiences = {
   copy:
     'Boating, angling and birdwatching on one side of the island; a pool, a DJ hall and a lawn made for a boat race crowd on the other.',
   art: 'water',
-  artAlt: 'Boating on the Kochi backwaters',
+  artAlt: 'Aerial view of the island and the backwater around it',
+  photo: '/img/experience.jpg',
+  video: '/video/experience.mp4',
+  poster: '/img/experience.jpg',
   chips: [
     'Boating',
     'Fishing',
@@ -174,33 +178,6 @@ export const events = {
     ctaLabel: 'Request a proposal',
     ctaHref: '#contact',
   },
-};
-
-export const discover = {
-  eyebrow: 'Discover Kochi',
-  titleLines: ['Beyond the island.'],
-  copy:
-    'Mulavukad sits in the middle of the harbour, between Fort Kochi’s colonial waterfront and the long green quiet of Vypin.',
-  items: [
-    {
-      id: 'fortkochi',
-      art: 'nets',
-      artAlt: 'Chinese fishing nets at Fort Kochi',
-      title: 'Fort Kochi & the Chinese Nets',
-      copy: 'Fifteen minutes across the harbour: cantilevered fishing nets, Portuguese and Dutch streets, the spice warehouses of Mattancherry and a beach that faces the shipping lane.',
-      linkLabel: 'Ask about Fort Kochi',
-      href: '#contact',
-    },
-    {
-      id: 'vypin',
-      art: 'palms',
-      artAlt: 'Backwater channels lined with coconut palms',
-      title: 'The Backwaters of Vypin',
-      copy: 'Narrow channels, prawn farms and villages built along the bunds. Our boats leave the jetty at first light, when the birds are on the water and the nets are coming up.',
-      linkLabel: 'Ask about the boat trip',
-      href: '#contact',
-    },
-  ],
 };
 
 export const callToAction = {
