@@ -212,4 +212,5 @@ matching it was the brief. Worth a decision before launch.
 - Prerender / SSR so the page has content without JS (see limitation above)
 - Open Graph image, sitemap
 #   I s l a n d D C o c h i n  
+ #   I s l a n d D C o c h i n  
  
