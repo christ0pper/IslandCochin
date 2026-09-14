@@ -3,45 +3,46 @@ import Logo from './Logo';
 
 export default function Footer() {
   const year = new Date().getFullYear();
-  const [findUs] = footer.columns;
 
   return (
     <footer className="footer" id="contact">
       <div className="wrap footer__in">
         <div className="footer__brand">
           <Logo className="brand--footer" />
-          <p className="footer__blurb">{site.tagline}</p>
+          <p className="footer__tagline">{site.tagline}</p>
+          <p className="footer__blurb">{site.blurb}</p>
         </div>
 
         <div className="footer__col">
-          <h4>{findUs.heading}</h4>
-          {findUs.lines.map((block, i) => (
-            <p key={i}>
-              {block.map((line, j) => (
-                <span key={j}>
-                  {line}
-                  {j < block.length - 1 && <br />}
-                </span>
-              ))}
-            </p>
-          ))}
+          <h4>Find us</h4>
+          <p>
+            Boat pickup &amp; free parking
+            <br />
+            {site.pickup}
+          </p>
+          <p>About 15 minutes from Marine Drive</p>
         </div>
 
         <div className="footer__col">
           <h4>Reach us</h4>
           <p>
-            <a href={site.phoneHref}>{site.phone}</a>
+            <a href={site.phoneHref}>Call {site.phone}</a>
           </p>
           <p>
-            <a href={`mailto:${site.email}`}>{site.email}</a>
+            <a href={site.whatsappHello} target="_blank" rel="noopener noreferrer">
+              WhatsApp us
+            </a>
           </p>
-          <p className="footer__social">
-            {footer.social.map((link) => (
-              <a key={link.label} href={link.href}>
-                {link.label}
-              </a>
-            ))}
-          </p>
+          <p>{site.hours}</p>
+          {footer.social.length > 0 && (
+            <p className="footer__social">
+              {footer.social.map((link) => (
+                <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer">
+                  {link.label}
+                </a>
+              ))}
+            </p>
+          )}
         </div>
 
         <div className="footer__col">
@@ -62,14 +63,16 @@ export default function Footer() {
         <p>
           © {year} {site.name}. All rights reserved.
         </p>
-        <p>
-          {footer.legal.map((link, i) => (
-            <span key={link.label}>
-              {i > 0 && ' · '}
-              <a href={link.href}>{link.label}</a>
-            </span>
-          ))}
-        </p>
+        {footer.legal.length > 0 && (
+          <p>
+            {footer.legal.map((link, i) => (
+              <span key={link.label}>
+                {i > 0 && ' · '}
+                <a href={link.href}>{link.label}</a>
+              </span>
+            ))}
+          </p>
+        )}
       </div>
     </footer>
   );

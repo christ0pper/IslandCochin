@@ -1,6 +1,7 @@
 import { events } from '../../data/site';
 import SectionHead from '../ui/SectionHead';
 import Reveal from '../ui/Reveal';
+import Art from '../ui/Art';
 import Button from '../ui/Button';
 
 export default function Events() {
@@ -12,6 +13,21 @@ export default function Events() {
           titleLines={events.titleLines}
           copy={events.copy}
         />
+
+        <div className="gallery">
+          {events.gallery.map((shot, i) => (
+            <Reveal as="figure" className="gallery__item" key={shot.photo} delay={i * 90}>
+              <Art
+                variant={shot.art}
+                photo={shot.photo}
+                alt={shot.alt}
+                className="gallery__art"
+                sizes="(max-width: 680px) 100vw, 50vw"
+              />
+              <figcaption>{shot.caption}</figcaption>
+            </Reveal>
+          ))}
+        </div>
 
         <dl className="stats">
           {events.stats.map((stat, i) => (
@@ -32,6 +48,20 @@ export default function Events() {
           <Button variant="line" href={events.note.ctaHref}>
             {events.note.ctaLabel}
           </Button>
+        </Reveal>
+
+        <Reveal className="hosted">
+          <h3 className="label">{events.hosted.heading}</h3>
+          {events.hosted.groups.map((group) => (
+            <div className="hosted__group" key={group.label}>
+              <p className="hosted__kind">{group.label}</p>
+              <ul className="hosted__names">
+                {group.names.map((name) => (
+                  <li key={name}>{name}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </Reveal>
       </div>
     </section>

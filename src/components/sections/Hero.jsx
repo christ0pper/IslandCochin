@@ -46,8 +46,8 @@ export default function Hero() {
         </Reveal>
         <Reveal as="p" className="hero__lead" delay={160}>{hero.lead}</Reveal>
         <Reveal className="hero__acts" delay={240}>
-          <Button variant="light" href="#stay">Explore the island</Button>
-          <Button variant="ghost-light" href="#book">Check availability</Button>
+          <Button variant="light" href="#lead">Explore the island</Button>
+          <Button variant="ghost-light" href="#book">Enquire now</Button>
         </Reveal>
       </div>
     </section>

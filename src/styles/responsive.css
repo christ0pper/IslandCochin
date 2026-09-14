@@ -33,9 +33,6 @@
   .burger{display:block}
   .header__cta .btn--solid{display:none}
 
-  .split{grid-template-columns:1fr}
-  .split__media{min-height:52vh}
-  .split__body{padding-inline:var(--gut)}
   .section__head{grid-template-columns:1fr;align-items:start}
   .copy--head{padding-bottom:0}
   .bookbar__form{grid-template-columns:1fr 1fr;gap:18px}
@@ -43,12 +40,25 @@
   .notecard{grid-template-columns:1fr;align-items:start}
 }
 
+/* One column for the photo-beside-text sections. The tall portrait crop
+   would fill a whole phone screen, so it relaxes to landscape here. */
+@media (max-width:1024px){
+  .package,.story{grid-template-columns:1fr}
+  .package__media{position:static}
+  .package__art,.story__art{aspect-ratio:4/3}
+  .faq{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
 @media (max-width:680px){
+  .cards--two,.gallery,.faq,.ticks{grid-template-columns:1fr}
+  .hosted__group{grid-template-columns:1fr;gap:10px}
+  .facts div + div{padding-left:12px}
+  .timeline{grid-template-columns:1fr}
+  .timeline li,.timeline li + li{padding:14px 0;border-left:0;border-bottom:1px solid var(--line)}
   .cards{grid-template-columns:1fr}
   .stats{grid-template-columns:1fr}
   .footer__in{grid-template-columns:1fr}
   .hero__in{padding-top:112px}
-  .stack__item a{padding-right:52px}
 }
 
 @media (prefers-reduced-motion:reduce){

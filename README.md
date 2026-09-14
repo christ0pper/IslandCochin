@@ -143,31 +143,19 @@ layout.
 
 ## Content status
 
-Grounded in published information about the venue:
+All business facts come from the owner, in **owner-answers.md** (answers to
+owner-questionnaire.md). If the site and that file disagree, the file wins.
+Don't add facilities, prices, capacities or policies it doesn't support.
 
-- Private island at Mulavukad on the national waterway, near Vypin
-- Free ferry from the mainland; car park on the Vaduthala / Don Bosco side
-- Riverside tent camping, open dining, floating dining area, pool, DJ party hall
-- Boating, bird watching, fishing, boat race, campfire
-- AC rooms for overnight guests
-- Capacity 1,000 guests · open lawn 800 (300 seated) · floating hall 450
-- Parking 100+ cars, 300 two-wheelers, valet
-- Wi-Fi, backup power, 24/7 CCTV security
-- Mainland address: Pazhampilly Thomas Road, Don Bosco Road, Vaduthala,
-  Ernakulam, Kochi, Kerala 682023
+Positioning: a private 1.5-acre island event and day-out destination. No camping,
+no accommodation, no pool; the Floating Deck is closed for renovation.
 
-**Placeholders that need real values before launch** (all in `src/data/site.js`):
+**Still needed before launch** (all in src/data/site.js):
 
-- `site.phone` / `site.phoneHref` — `+91 00000 00000`. The number on the
-  event-listing sites belongs to a third-party event agency, not the venue, so it
-  is deliberately not used here.
-- `site.email` — `hello@islanddcochin.com` is a guess.
-- `footer.social` — Instagram and WhatsApp are `#` (Facebook is the real page).
-- `stay.items[*].title` — plausible product names built from the known
-  facilities, not published names. Confirm with the owner.
-- Prices are not shown anywhere yet (reported: from ₹3,000/night, events from
-  ~₹45,000). Add once confirmed.
-- `--brand` blue is an estimate; sample the real value from a logo or signage.
+- Full postal address and Google Maps link for the River D pickup point
+- Instagram link (the owner confirmed a page; the link did not come through)
+- Privacy Policy and Terms: they don't exist yet; add links to footer.legal once written
+- No email address is shown because the owner has none; enquiries go to phone/WhatsApp
 
 ## Design & accessibility review
 

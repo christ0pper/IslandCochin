@@ -64,6 +64,14 @@ export default function Experiences() {
             <li key={chip}>{chip}</li>
           ))}
         </Reveal>
+
+        {experiences.notes?.length > 0 && (
+          <Reveal as="ul" className="band__notes" delay={300}>
+            {experiences.notes.map((note) => (
+              <li key={note}>{note}</li>
+            ))}
+          </Reveal>
+        )}
       </div>
     </section>
   );

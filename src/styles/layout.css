@@ -66,6 +66,7 @@ body:not(.scrolled) .header .btn--solid:not(.nav__book):hover{background:#fff;co
 .footer{background:var(--forest);color:rgba(255,255,255,.68);padding-top:clamp(70px,9vw,120px)}
 .footer__in{display:grid;grid-template-columns:1.5fr 1.2fr 1fr 1fr;gap:clamp(30px,4vw,60px);padding-bottom:70px}
 .footer .brand{color:#fff;margin-bottom:22px}
+.footer__tagline{font-family:var(--serif);font-size:1.5rem;color:#fff;margin-bottom:10px}
 .footer__blurb{max-width:34ch;font-size:.92rem}
 .footer__col h4{
   font-family:var(--sans);font-size:10px;letter-spacing:.22em;

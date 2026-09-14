@@ -25,7 +25,7 @@
    BOOKING BAR
    --------------------------------------------------------------- */
 .bookbar{background:var(--forest);color:#fff;padding:26px 0}
-.bookbar__form{display:grid;grid-template-columns:1.4fr 1fr 1fr .8fr auto;gap:20px;align-items:end}
+.bookbar__form{display:grid;grid-template-columns:1.5fr 1fr .7fr auto;gap:20px;align-items:end}
 .field{display:flex;flex-direction:column;gap:8px;min-width:0}
 .field label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.6)}
 .field input,.field select{
@@ -39,7 +39,7 @@
 .field input::-webkit-calendar-picker-indicator{filter:invert(1);opacity:.6;cursor:pointer}
 .bookbar__go{background:#fff;color:var(--forest);height:46px}
 .bookbar__go:hover{background:var(--brand-soft);color:#fff}
-.bookbar__status{grid-column:1/-1;margin-top:2px;font-size:.9rem;color:rgba(255,255,255,.82)}
+.bookbar__status,.bookbar__hint{grid-column:1/-1;margin-top:2px;font-size:.9rem;color:rgba(255,255,255,.82)}
 .bookbar__status:empty{display:none}
 
 /* ---------------------------------------------------------------
@@ -53,40 +53,31 @@
 }
 
 /* ---------------------------------------------------------------
-   SPLIT — STAY & CAMPING
+   DAY OUT PACKAGE
    --------------------------------------------------------------- */
-.split{display:grid;grid-template-columns:44% 1fr;align-items:stretch;background:var(--sand)}
-.split__media{position:relative;min-height:640px;overflow:hidden}
-.split__media .art{position:absolute;inset:0;transition:opacity .6s var(--ease),transform 1.2s var(--ease)}
-.split__media:hover .art{transform:scale(1.03)}
-.split__caption{
-  position:absolute;left:32px;bottom:30px;color:#fff;
-  font-size:11px;letter-spacing:.2em;text-transform:uppercase;
-  text-shadow:0 1px 12px rgba(0,0,0,.5);
-}
-.split__body{padding:clamp(56px,7vw,110px) var(--gut) clamp(56px,7vw,110px) clamp(40px,5vw,90px)}
-.split__head{max-width:52ch;margin-bottom:64px}
-.split__head .copy{margin-top:26px}
-.split__head .btn{margin-top:34px}
+.package{display:grid;grid-template-columns:5fr 6fr;gap:clamp(40px,6vw,96px);align-items:start}
+/* the photo holds its place while the longer list beside it scrolls past */
+.package__media{position:sticky;top:calc(var(--header-h) + 32px)}
+.package__art{aspect-ratio:4/5}
+.package__copy{margin-top:26px}
 
-.stack{border-top:1px solid var(--line)}
-.stack__item{border-bottom:1px solid var(--line)}
-.stack__item a{
-  position:relative;display:block;padding:30px 70px 30px 0;
-  transition:transform .4s var(--ease),color .35s var(--ease);
+/* three label/value pairs split by hairlines */
+.facts{display:grid;grid-template-columns:repeat(3,1fr);margin:36px 0 34px;border-block:1px solid var(--line)}
+.facts div{padding:16px 0;min-width:0}
+.facts div + div{padding-left:18px;border-left:1px solid var(--line)}
+.facts dt{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--brand-ink)}
+.facts dd{margin-top:6px;font-family:var(--serif);font-size:clamp(1.3rem,2vw,1.6rem);line-height:1.2}
+
+.ticks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 28px;margin-top:16px}
+.ticks li{position:relative;padding-left:22px;font-size:.95rem;line-height:1.5}
+.ticks li::before{
+  content:"";position:absolute;left:0;top:.5em;width:9px;height:5px;
+  border-left:1.5px solid var(--brand);border-bottom:1.5px solid var(--brand);
+  transform:rotate(-45deg);
 }
-.stack__item h3{font-size:clamp(1.35rem,2vw,1.75rem);transition:color .35s var(--ease)}
-.stack__item p{margin-top:10px;color:var(--muted);font-size:.95rem;max-width:56ch}
-.stack__num{
-  position:absolute;right:6px;top:34px;
-  font-size:11px;letter-spacing:.16em;color:var(--muted);
-  transition:color .35s var(--ease),transform .4s var(--ease);
-}
-.stack__item a:hover{transform:translateX(20px)}
-.stack__item a:hover h3{color:var(--brand)}
-.stack__item a:hover .stack__num{color:var(--brand);transform:translateX(-4px)}
-.stack__item.is-active a{transform:translateX(20px)}
-.stack__item.is-active h3{color:var(--brand)}
+.package__extra{margin-top:30px;font-size:.95rem}
+.package__extra .label{display:inline;margin-right:10px}
+.package__custom{margin:10px 0 34px;color:var(--muted);font-size:.95rem}
 
 /* ---------------------------------------------------------------
    BAND — EXPERIENCES
@@ -104,6 +95,7 @@
   padding:9px 20px;font-size:11px;letter-spacing:.16em;
   text-transform:uppercase;color:rgba(255,255,255,.86);
 }
+.band__notes{display:grid;gap:8px;margin-top:34px;font-size:.9rem;color:rgba(255,255,255,.78);max-width:62ch}
 
 /* ---------------------------------------------------------------
    STATS + NOTECARD
@@ -134,4 +126,57 @@
    --------------------------------------------------------------- */
 .cta{background:var(--brand);color:#fff;text-align:center;padding:clamp(80px,11vw,150px) 0}
 .cta__in{display:flex;flex-direction:column;align-items:center}
-.cta .btn{margin-top:38px}
+.cta__copy{margin-top:24px;max-width:46ch;color:rgba(255,255,255,.86)}
+.cta__acts{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:38px}
+
+/* ---------------------------------------------------------------
+   EVENTS — gallery + hosted
+   --------------------------------------------------------------- */
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(20px,3vw,36px);margin:0 0 clamp(40px,5vw,64px)}
+.gallery__item{margin:0}
+.gallery__art{aspect-ratio:4/3}
+.gallery figcaption{
+  margin-top:14px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);
+}
+
+.hosted{margin-top:clamp(48px,6vw,80px);display:grid;gap:26px}
+.hosted__group{display:grid;grid-template-columns:180px 1fr;gap:24px;align-items:baseline;
+  padding-top:22px;border-top:1px solid var(--line)}
+.hosted__kind{font-size:.9rem;color:var(--muted)}
+.hosted__names{display:flex;flex-wrap:wrap;gap:8px 30px}
+.hosted__names li{font-family:var(--serif);font-size:clamp(1.25rem,1.9vw,1.6rem);line-height:1.3;color:var(--olive)}
+
+/* ---------------------------------------------------------------
+   OUR STORY
+   --------------------------------------------------------------- */
+.story{display:grid;grid-template-columns:6fr 5fr;gap:clamp(40px,6vw,96px);align-items:center}
+.story__para{margin-top:22px;max-width:58ch}
+.story__para:first-of-type{margin-top:30px}
+.story__art{aspect-ratio:4/5}
+
+.timeline{display:grid;grid-template-columns:repeat(3,1fr);margin-top:40px;border-top:1px solid var(--line)}
+.timeline li{padding:18px 18px 0 0}
+.timeline li + li{padding-left:18px;border-left:1px solid var(--line)}
+.timeline__year{display:block;font-family:var(--serif);font-size:clamp(1.5rem,2.4vw,2rem);line-height:1.1;color:var(--olive)}
+.timeline__text{display:block;margin-top:8px;font-size:.88rem;color:var(--muted);line-height:1.5}
+
+/* ---------------------------------------------------------------
+   PLAN YOUR VISIT — FAQ
+   --------------------------------------------------------------- */
+.faq{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(28px,4vw,56px);align-items:start}
+.faq__group .label{margin-bottom:10px}
+.faq__item{border-bottom:1px solid var(--line)}
+.faq__item summary{
+  position:relative;list-style:none;cursor:pointer;
+  padding:18px 34px 18px 0;font-size:1rem;line-height:1.45;color:var(--ink);
+}
+.faq__item summary::-webkit-details-marker{display:none}
+/* plus that turns into a minus */
+.faq__item summary::before,.faq__item summary::after{
+  content:"";position:absolute;right:4px;top:50%;width:12px;height:1.5px;
+  background:var(--brand);transition:transform .3s var(--ease);
+}
+.faq__item summary::after{transform:rotate(90deg)}
+.faq__item[open] summary::after{transform:rotate(0)}
+.faq__item summary:hover{color:var(--brand-ink)}
+.faq__item p{padding:0 10px 20px 0;color:var(--muted);font-size:.95rem;line-height:1.65}

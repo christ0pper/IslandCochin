@@ -31,7 +31,8 @@ export default function Art({
           alt={alt || ''}
           sizes={sizes}
           loading={priority ? 'eager' : 'lazy'}
-          fetchPriority={priority ? 'high' : 'auto'}
+          // React 18 doesn't know the camelCase prop yet; the lowercase attribute passes straight through
+          fetchpriority={priority ? 'high' : 'auto'}
           decoding="async"
         />
       </div>
