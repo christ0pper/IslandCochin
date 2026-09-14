@@ -12,7 +12,6 @@ export default function Hero() {
   return (
     <section className="hero" id="top">
       <Art
-        variant={hero.art}
         photo={hero.photo}
         alt={hero.artAlt}
         className="hero__media"

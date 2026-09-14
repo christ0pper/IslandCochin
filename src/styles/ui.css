@@ -18,53 +18,22 @@
 .btn--ghost-light:hover{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.5)}
 
 /* ---------------------------------------------------------------
-   PLACEHOLDER ART  (swap with --photo)
+   IMAGE SLOTS
    --------------------------------------------------------------- */
+/* Off-white while loading, with a soft light sweeping across it. The photo
+   (see Art.jsx) fades in over the top once it has arrived, and the sweep stops. */
 .art{
-  background-image:var(--photo,var(--layers));
-  background-size:cover;background-position:center;
-  background-color:var(--water-deep);
+  position:relative;overflow:hidden;
+  background-color:var(--placeholder);
+  background-image:linear-gradient(100deg,rgba(255,255,255,0) 35%,rgba(255,255,255,.75) 50%,rgba(255,255,255,0) 65%);
+  background-size:220% 100%;background-repeat:no-repeat;
+  animation:artLoading 1.6s ease-in-out infinite;
 }
-/* A real photo renders as a child <img> (see Art.jsx) so it can carry
-   loading / fetchpriority / sizes. The painted gradient stays behind it and
-   acts as the placeholder while it loads. */
-.art__img{display:block;width:100%;height:100%;object-fit:cover}
+.art.is-loaded{animation:none;background-image:none}
+@keyframes artLoading{from{background-position:120% 0}to{background-position:-120% 0}}
 
-/* aerial: island in open water */
-.art--aerial{--layers:
-  radial-gradient(56% 44% at 50% 62%, rgba(31,86,116,.95) 0%, rgba(18,58,86,.88) 40%, rgba(0,0,0,0) 64%),
-  radial-gradient(120% 70% at 50% 118%, rgba(8,32,54,.82) 0%, rgba(0,0,0,0) 60%),
-  repeating-linear-gradient(96deg, rgba(255,255,255,.08) 0 2px, rgba(255,255,255,0) 2px 26px),
-  linear-gradient(180deg,#2f7ba6 0%,#1c5c85 46%,#0d3352 100%);
-}
-.art--room{--layers:
-  linear-gradient(115deg, rgba(255,255,255,.3) 0 34%, rgba(255,255,255,0) 34%),
-  radial-gradient(60% 50% at 78% 30%, rgba(255,255,255,.3), rgba(0,0,0,0) 70%),
-  linear-gradient(180deg,#2c7fae 0%,#134a72 100%);
-}
-.art--dayout{--layers:
-  radial-gradient(40% 30% at 70% 20%, rgba(255,255,255,.62), rgba(0,0,0,0) 70%),
-  linear-gradient(180deg,#8fc9e0 0%,#3585b0 52%,#134a72 100%);
-}
-.art--dining{--layers:
-  radial-gradient(38% 30% at 26% 22%, rgba(255,255,255,.5), rgba(0,0,0,0) 72%),
-  repeating-linear-gradient(180deg, rgba(8,32,54,.08) 0 1px, rgba(0,0,0,0) 1px 28px),
-  linear-gradient(150deg,#5ba3c6 0%,#1b5a83 100%);
-}
-.art--float{--layers:
-  repeating-linear-gradient(92deg, rgba(255,255,255,.12) 0 2px, rgba(255,255,255,0) 2px 18px),
-  radial-gradient(50% 40% at 50% 84%, rgba(255,255,255,.24), rgba(0,0,0,0) 70%),
-  linear-gradient(180deg,#3d8fb8 0%,#0f3452 100%);
-}
-.art--fire{--layers:
-  radial-gradient(30% 26% at 50% 70%, rgba(255,255,255,.55), rgba(0,0,0,0) 72%),
-  linear-gradient(180deg,#123c5c 0%,#071b2d 100%);
-}
-.art--water{--layers:
-  repeating-linear-gradient(88deg, rgba(255,255,255,.1) 0 2px, rgba(255,255,255,0) 2px 22px),
-  radial-gradient(70% 50% at 50% 6%, rgba(255,255,255,.34), rgba(0,0,0,0) 70%),
-  linear-gradient(180deg,#2b7ba5 0%,#0d2f4b 100%);
-}
+.art__img{display:block;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s var(--ease)}
+.art.is-loaded .art__img{opacity:1}
 
 /* ---------------------------------------------------------------
    GENERIC SECTIONS + CARDS

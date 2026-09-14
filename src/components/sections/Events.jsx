@@ -18,7 +18,6 @@ export default function Events() {
           {events.gallery.map((shot, i) => (
             <Reveal as="figure" className="gallery__item" key={shot.photo} delay={i * 90}>
               <Art
-                variant={shot.art}
                 photo={shot.photo}
                 alt={shot.alt}
                 className="gallery__art"

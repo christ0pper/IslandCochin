@@ -12,7 +12,6 @@ export default function DayOut() {
       <div className="wrap package">
         <Reveal className="package__media">
           <Art
-            variant={dayOut.art}
             photo={dayOut.photo}
             alt={dayOut.artAlt}
             className="package__art"

@@ -29,7 +29,6 @@ export default function Experiences() {
   return (
     <section className="band" id="experiences">
       <Art
-        variant={experiences.art}
         photo={experiences.photo}
         alt={experiences.artAlt}
         className="band__media"

@@ -15,6 +15,11 @@
   position:absolute;inset:0;
   background:linear-gradient(180deg,rgba(7,29,50,.52) 0%,rgba(7,29,50,.10) 34%,rgba(7,29,50,.78) 100%);
 }
+/* Until the hero photo arrives: no shimmer stripe (the zoom-in animation owns
+   this element), and a stronger neutral veil so the white headline stays
+   readable over the off-white placeholder. */
+.hero__media{background-image:none}
+.hero:has(.hero__media:not(.is-loaded)) .hero__veil{background:rgba(22,22,22,.55)}
 .hero__in{position:relative;color:#fff;padding-bottom:clamp(72px,10vh,120px);padding-top:132px}
 .hero__title{font-size:clamp(2.4rem,5.4vw,4.6rem);max-width:22ch;text-wrap:balance}
 .hero__title em{font-style:italic;color:rgba(255,255,255,.86)}

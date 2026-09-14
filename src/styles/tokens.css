@@ -5,10 +5,9 @@
    whitespace) in Island D Cochin's own white-and-blue palette.
 
    PHOTOGRAPHY / VIDEO
-   Every image slot is an .art element with a painted placeholder.
-   Drop in a real photo with one inline style, no CSS edits:
-     <div class="art art--aerial" style="--photo:url('assets/img/hero.jpg')"></div>
-   The hero also accepts a background video - see .hero__video below.
+   Every image slot is an .art element (Art.jsx): an off-white placeholder
+   that shimmers until its photo loads, then fades the photo in. The hero
+   and Experiences band also play a background video over theirs.
    ===================================================================== */
 
 :root{
@@ -30,6 +29,7 @@
   /* backwater accents */
   --water:#3f7f9e;
   --water-deep:#0f2f47;
+  --placeholder:#efeeea; /* neutral off-white shown while photos and videos load */
   --sun:#e8f1f6;      /* highlights read as white light on water */
 
   /* neutrals */

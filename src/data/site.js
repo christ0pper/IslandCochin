@@ -47,7 +47,7 @@ export const hero = {
   emphasis: 'to yourself',
   lead:
     'A private 1.5-acre island on the Kochi backwaters, with Chinese fishing nets on the horizon. Bring your people across by boat for a celebration, a company day or a day out.',
-  art: 'aerial',
+  photo: '/img/hero.jpg', // shown until the video plays, and instead of it for reduced motion
   artAlt: 'Aerial view of Island D Cochin surrounded by backwaters',
   video: '/video/hero.mp4',
   videoMobile: '/video/hero-720.mp4',
@@ -114,7 +114,6 @@ export const dayOut = {
   copy:
     'Cross over in the morning and have the island until evening: lunch, air-conditioned halls with sound and lights, the open lawn for games, and kayaks on the water. Made for groups of 50 or more.',
   photo: '/img/dayoutpackage.jpg',
-  art: 'dayout',
   artAlt: 'Tables dressed in gold and black on the lawn beside the backwater',
   facts: [
     { label: 'Hours', value: '10 AM – 6 PM' },
@@ -146,13 +145,11 @@ export const events = {
   gallery: [
     {
       photo: '/img/lawn-night.jpg',
-      art: 'aerial',
       alt: 'The island lawn at night from above, lined with lights around tables and a stage',
       caption: 'The open lawn, set for an evening event',
     },
     {
       photo: '/img/seating.jpg',
-      art: 'float',
       alt: 'An air-conditioned hall set with rows of covered chairs facing a stage',
       caption: 'An air-conditioned hall, set for a gathering',
     },
@@ -200,7 +197,6 @@ export const experiences = {
   titleLines: ['Out on the water,', 'or out on the lawn.'],
   copy:
     'Take out a kayak, go for a sunset cruise or a speedboat ride, then bring the evening in with a campfire, a barbecue and the DJ hall.',
-  art: 'water',
   artAlt: 'Aerial view of the island and the backwater around it',
   photo: '/img/experience.jpg',
   video: '/video/experience.mp4',
@@ -229,7 +225,6 @@ export const food = {
   items: [
     {
       id: 'catering',
-      art: 'dining',
       photo: '/img/outdoor.jpg',
       artAlt: 'A long table set on the island lawn beside the backwater',
       title: 'Catering to your menu',
@@ -239,7 +234,6 @@ export const food = {
     },
     {
       id: 'evenings',
-      art: 'fire',
       photo: '/img/nightlights.jpg',
       artAlt: 'Fairy-lit trees over the path to a food counter at night',
       title: 'Evenings on the island',
@@ -254,7 +248,6 @@ export const story = {
   eyebrow: 'Our Story',
   titleLines: ['From Sandalwood Island', 'to Island D.'],
   photo: '/img/lights.jpg',
-  art: 'room',
   artAlt: 'The island at dusk, with lit palms along the path',
   paragraphs: [
     'Pazhampilly Thomas bought the island in the 1960s, and for years it was a private retreat and farm for him and his family.',

@@ -30,7 +30,6 @@ export default function Story() {
 
         <Reveal className="story__media" delay={120}>
           <Art
-            variant={story.art}
             photo={story.photo}
             alt={story.artAlt}
             className="story__art"
