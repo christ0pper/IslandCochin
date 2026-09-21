@@ -198,7 +198,6 @@ export const experiences = {
   copy:
     'Take out a kayak, go for a sunset cruise or a speedboat ride, then bring the evening in with a campfire, a barbecue and the DJ hall.',
   artAlt: 'Aerial view of the island and the backwater around it',
-  photo: '/img/experience.jpg',
   video: '/video/experience.mp4',
   poster: '/img/experience.jpg',
   chips: [
@@ -346,6 +345,9 @@ export const visit = {
 export const callToAction = {
   eyebrow: 'Plan your day',
   title: 'Bring your people across the water.',
+  video: '/video/outdoor.mp4',
+  poster: '/img/outdoor-lawn.jpg',
+  videoAlt: 'Round tables dressed in gold and black, set out across the island lawn',
   copy: `Call or WhatsApp ${site.phone}. ${site.replyNote}`,
 };
 

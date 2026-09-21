@@ -1,6 +1,7 @@
 import { callToAction, site } from '../../data/site';
 import Reveal from '../ui/Reveal';
 import Button from '../ui/Button';
+import LoopVideo from '../ui/LoopVideo';
 
 export default function CallToAction() {
   return (
@@ -17,6 +18,18 @@ export default function CallToAction() {
             Call {site.phone}
           </Button>
         </Reveal>
+
+        {callToAction.video && (
+          <Reveal className="cta__media" delay={200}>
+            <LoopVideo
+              video={callToAction.video}
+              poster={callToAction.poster}
+              alt={callToAction.videoAlt}
+              className="cta__clip"
+              sizes="(max-width: 680px) 78vw, 320px"
+            />
+          </Reveal>
+        )}
       </div>
     </section>
   );

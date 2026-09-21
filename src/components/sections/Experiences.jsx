@@ -1,53 +1,18 @@
-import { useEffect, useRef } from 'react';
 import { experiences } from '../../data/site';
-import { useAllowMotion } from '../../hooks/useAllowMotion';
 import Reveal from '../ui/Reveal';
 import Headline from '../ui/Headline';
-import Art from '../ui/Art';
+import LoopVideo from '../ui/LoopVideo';
 
 export default function Experiences() {
-  const allowMotion = useAllowMotion();
-  const showVideo = Boolean(experiences.video) && allowMotion;
-  const videoRef = useRef(null);
-
-  // Below the fold: nothing downloads until the band nears the viewport, and
-  // the loop pauses again once it scrolls away.
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-    const io = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) video.play().catch(() => {});
-        else video.pause();
-      },
-      { rootMargin: '200px 0px' }
-    );
-    io.observe(video);
-    return () => io.disconnect();
-  }, [showVideo]);
-
   return (
     <section className="band" id="experiences">
-      <Art
-        photo={experiences.photo}
+      <LoopVideo
+        video={experiences.video}
+        poster={experiences.poster}
         alt={experiences.artAlt}
         className="band__media"
+        videoClassName="band__video"
       />
-
-      {showVideo && (
-        <video
-          ref={videoRef}
-          className="band__media band__video"
-          muted
-          loop
-          playsInline
-          preload="none"
-          poster={experiences.poster}
-          aria-hidden="true"
-        >
-          <source src={experiences.video} type="video/mp4" />
-        </video>
-      )}
 
       <div className="band__veil" aria-hidden="true" />
 
