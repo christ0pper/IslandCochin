@@ -8,10 +8,11 @@ received 14 September 2026. If the site and this file disagree, this file wins.
 - Email: none at present — enquiries by phone and WhatsApp
 - Enquiries handled by the Island D Cochin team, **9:00 AM – 8:00 PM**; reply within about **15 minutes** in those hours
 - Facebook: the existing page (facebook.com/islandd.cochin) is official
-- Instagram: yes — *link still needed (did not come through in the reply)*
+- Instagram: https://www.instagram.com/islanddcochin/ (received 22 September 2026)
 - No other pages to add
 
 ## Location & getting there
+- Island address: **Island D, Mulavukad, Kochi, Ernakulam, Keralam 682504** (received 22 September 2026)
 - Mainland pickup and parking: **River D, Cochin**. Park outside River D, wait in the designated area, board the boat
   - *Full postal address and Google Maps link still needed (link did not come through)*
 - About **15 minutes from Marine Drive**, Kochi, by road/boat transfer, depending on the journey

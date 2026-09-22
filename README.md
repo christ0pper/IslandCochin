@@ -178,7 +178,6 @@ no accommodation, no pool; the Floating Deck is closed for renovation.
 **Still needed before launch** (all in src/data/site.js):
 
 - Full postal address and Google Maps link for the River D pickup point
-- Instagram link (the owner confirmed a page; the link did not come through)
 - Privacy Policy and Terms: they don't exist yet; add links to footer.legal once written
 - No email address is shown because the owner has none; enquiries go to phone/WhatsApp
 

@@ -15,6 +15,13 @@ export default function Footer() {
 
         <div className="footer__col">
           <h4>Find us</h4>
+          <address className="footer__address">
+            {site.address.street}
+            <br />
+            {site.address.locality}, {site.address.district}
+            <br />
+            {site.address.region} {site.address.postalCode}
+          </address>
           <p>
             Boat pickup &amp; free parking
             <br />

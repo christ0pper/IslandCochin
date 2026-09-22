@@ -30,6 +30,15 @@ export const site = {
   hours: '9:00 AM – 8:00 PM',
   replyNote: 'We usually reply within 15 minutes, between 9:00 AM and 8:00 PM.',
 
+  // the island's postal address, as the owner gives it
+  address: {
+    street: 'Island D, Mulavukad',
+    locality: 'Kochi',
+    district: 'Ernakulam',
+    region: 'Keralam',
+    postalCode: '682504',
+  },
+
   // TODO: owner to send the full postal address and Google Maps link for River D
   pickup: 'River D, Cochin',
 };
@@ -354,7 +363,7 @@ export const callToAction = {
 export const footer = {
   social: [
     { label: 'Facebook', href: 'https://www.facebook.com/islandd.cochin/' },
-    // TODO: Instagram — owner confirmed a page; the link is still needed
+    { label: 'Instagram', href: 'https://www.instagram.com/islanddcochin/' },
   ],
   // TODO: Privacy Policy and Terms don't exist yet; add { label, href } entries once written
   legal: [],

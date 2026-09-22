@@ -6,7 +6,7 @@
    Every claim here has to be one the owner confirmed (owner-answers.md).
    --------------------------------------------------------------------- */
 
-import { site, dayOut, events, visit, food } from './site';
+import { site, dayOut, events, visit, food, footer } from './site';
 
 const abs = (path) => new URL(path, site.url).href;
 
@@ -28,9 +28,11 @@ function business() {
     isAccessibleForFree: false,
     address: {
       '@type': 'PostalAddress',
-      // TODO: add streetAddress + postalCode once the owner sends the River D address
-      addressLocality: 'Kochi',
+      streetAddress: site.address.street,
+      addressLocality: site.address.locality,
+      // schema.org matching expects the standard state name
       addressRegion: 'Kerala',
+      postalCode: site.address.postalCode,
       addressCountry: 'IN',
     },
     areaServed: [
@@ -40,7 +42,7 @@ function business() {
     ],
     maximumAttendeeCapacity: 200,
     publicAccess: false,
-    sameAs: ['https://www.facebook.com/islandd.cochin/'],
+    sameAs: footer.social.map((link) => link.href),
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'Reservations',

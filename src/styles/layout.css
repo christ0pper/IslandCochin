@@ -73,6 +73,7 @@ body:not(.scrolled) .header .btn--solid:not(.nav__book):hover{background:#fff;co
   text-transform:uppercase;color:rgba(255,255,255,.62);margin-bottom:20px;
 }
 .footer__col p{font-size:.92rem;margin-bottom:14px}
+.footer__address{font-style:normal;font-size:.92rem;margin-bottom:14px}
 .footer__col a{transition:color .3s var(--ease)}
 .footer__col a:hover{color:#fff}
 .footer__social{display:flex;gap:18px}
