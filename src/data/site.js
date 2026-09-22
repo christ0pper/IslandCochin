@@ -11,6 +11,9 @@
 const PHONE_DIGITS = '919746610999';
 
 export const site = {
+  // the live domain; if it ever changes, also update index.html (canonical,
+  // og:*) and public/robots.txt, public/sitemap.xml and public/llms.txt
+  url: 'https://islanddcochin.in',
   name: 'Island D Cochin',
   tagline: 'An island to yourself.',
   blurb:
@@ -345,9 +348,6 @@ export const visit = {
 export const callToAction = {
   eyebrow: 'Plan your day',
   title: 'Bring your people across the water.',
-  video: '/video/outdoor.mp4',
-  poster: '/img/outdoor-lawn.jpg',
-  videoAlt: 'Round tables dressed in gold and black, set out across the island lawn',
   copy: `Call or WhatsApp ${site.phone}. ${site.replyNote}`,
 };
 

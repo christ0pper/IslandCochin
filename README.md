@@ -141,6 +141,31 @@ It renders autoplay/muted/loop over the placeholder art. Keep it under ~8 MB and
 10–20 seconds — a slow drone push over the island or the ferry crossing suits the
 layout.
 
+## Search & AI visibility
+
+`npm run build` does three things: builds the client, renders the page with
+React on the server (`src/entry-server.jsx`), and writes that markup plus the
+schema.org data into `dist/index.html` (`scripts/prerender.mjs`). The shipped
+page therefore carries its own text for crawlers, AI assistants and link
+previews, and the browser hydrates it rather than repainting. `npm run
+build:client` skips the prerender if you ever need the plain Vite build.
+
+- `src/data/structuredData.js` — LocalBusiness / EventVenue, FAQPage, WebSite,
+  WebPage, built from `site.js` so the markup and the data can never disagree
+- `index.html` — canonical, robots, Open Graph, geo.region / geo.placename
+- `public/robots.txt`, `public/sitemap.xml` — one page, one URL
+- `public/llms.txt` — plain-text facts for AI assistants, including what the
+  island does NOT have (no rooms, no camping, no pool)
+
+The site is live at https://islanddcochin.in/ (Vercel). The domain appears in
+`site.url`, in the canonical/Open Graph tags in `index.html` and in the three
+files in `public/`; change them together if it ever moves. `vercel.json` sets
+long cache lifetimes for the hashed `/assets` bundle and for photos and video.
+
+After a deploy, submit `https://islanddcochin.in/sitemap.xml` in Google Search
+Console and Bing Webmaster Tools, and link the site from the Google Business
+Profile — those three steps can only be done by the owner's account.
+
 ## Content status
 
 All business facts come from the owner, in **owner-answers.md** (answers to
@@ -180,11 +205,9 @@ Fixed in this round:
 | `touch-action: manipulation`, `-webkit-tap-highlight-color`, `env(safe-area-inset-*)` | Double-tap zoom delay; notch clearance on the full-bleed bars |
 | `translate="no"` on the wordmark, non-breaking spaces in the phone number | Auto-translation garbling the brand; phone breaking across lines |
 
-**Known limitation — the page is blank without JavaScript.** That is inherent to a
-client-rendered SPA and is not fixed here: link-preview scrapers and any crawler
-that does not execute JS get nothing. For a marketing site that matters. The fix
-is prerendering (`vite-plugin-ssr` / `vite-react-ssg`, or moving to Next.js);
-worth doing before launch.
+**Fixed since: the page used to be blank without JavaScript.** The build now
+prerenders it (see *Search & AI visibility*), so crawlers and link previews get
+the full content.
 
 **Deliberately not changed:** the `01`–`05` numbering on the stay list. The
 guidelines reserve numbered markers for real sequences, and five parallel stay
@@ -197,8 +220,8 @@ matching it was the brief. Worth a decision before launch.
 - Wire `BookingBar`'s `onSubmit` to a real endpoint — it currently only logs
 - Google Map embed for the island jetty and the mainland parking
 - Malayalam language toggle (the reference site has HR/EN)
-- Prerender / SSR so the page has content without JS (see limitation above)
-- Open Graph image, sitemap
-#   I s l a n d D C o c h i n  
- #   I s l a n d D C o c h i n  
+#   I s l a n d D C o c h i n 
+ 
+ #   I s l a n d D C o c h i n 
+ 
  

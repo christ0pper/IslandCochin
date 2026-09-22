@@ -42,7 +42,12 @@ const readableDate = (iso) =>
 export default function BookingBar() {
   const [form, setForm] = useState({ type: bookingOptions[0].label, date: '', guests: 50 });
   const [status, setStatus] = useState('');
+  // set after mount: the page is prerendered at build time, and a build-time
+  // date baked into min= would be stale by the time anyone loads the page
+  const [earliest, setEarliest] = useState('');
   const dateRef = useRef(null);
+
+  useEffect(() => setEarliest(today()), []);
 
   useEffect(() => {
     const onPrefill = (event) => {
@@ -121,7 +126,7 @@ export default function BookingBar() {
               name="date"
               type="date"
               autoComplete="off"
-              min={today()}
+              min={earliest}
               value={form.date}
               onChange={update('date')}
             />

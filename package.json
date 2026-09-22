@@ -6,9 +6,10 @@
   "description": "Website for Island D Cochin, a private backwater island at Mulavukad, Kochi.",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && vite build --ssr src/entry-server.jsx --outDir dist-ssr && node scripts/prerender.mjs",
     "preview": "vite preview",
-    "screenshot": "node scripts/screenshot.mjs"
+    "screenshot": "node scripts/screenshot.mjs",
+    "build:client": "vite build"
   },
   "dependencies": {
     "react": "^18.3.1",
